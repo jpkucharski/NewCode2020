@@ -1,0 +1,54 @@
+FUNCTIONAL PROGRAMMING 
+
+ Functional programming contains the following key concepts:
+
+    -Functions as first class objects
+	 You can create an "instance" of a function, as have a variable reference that function 
+	 instance,  Functions can also be passed as parameters to other functions 
+    -Pure functions
+	 A function is a pure function if:
+    	 The execution of the function has no side effects.
+  	 The return value of the function depends only on the input parameters passed to the 		 
+	 function.
+
+    -Higher order functions
+	  A function is a higher order function if at least one of the following conditions are
+ 	  met:
+	  The function takes one or more functions as parameters.
+    	  The function returns another function as result.
+
+	public class HigherOrderFunctionClass {
+
+		public <T> IFactory<T> createFactory(IProducer<T> producer, IConfigurator<T> configurator) {
+			return () -> {
+				T instance = producer.produce();
+				configurator.configure(instance);
+				return instance;
+			}
+		}
+	}	
+
+
+Pure functional programming has a set of rules to follow too:
+
+    -No state
+		A function may have local variables containing temporary state internally, 
+		but the function cannot reference any member variables of the class or object the
+ 		function belongs to.
+	
+    -No side effects
+		function cannot change any state outside of the function. Changing state outside
+		of a function is referred to as a side effect. 
+	
+    -Immutable variables
+		Immutable variables makes it easier to avoid side effects. 
+    -Favour recursion over looping
+		Recursion uses function calls to achieve looping, so the code becomes more
+		functional.
+		Another alternative to loops is the Java Streams API. This API is functionally 		
+		inspired. 
+
+-------------------------------------------------------------------------------------------------------------------------------------
+Five core techniques used in functional programming: pure functions, higher-order functions, lazy evaluation, closures, and currying. 
+-------------------------------------------------------------------------------------------------------------------------------------
+

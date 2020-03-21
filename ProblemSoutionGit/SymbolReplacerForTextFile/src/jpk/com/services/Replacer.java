@@ -10,26 +10,27 @@ import java.util.stream.Stream;
 
 public class Replacer {
 
-    private static final String FILE_PATH = "/home/peter/Desktop/file.txt";
-    private static final String REPLACE_ALL= "&";
-    private static final String REPLACE_WITH = " ";
+    //    file path - File Should be placed in main folder of the project next to src folder
+    private static final String FILE_PATH = "file.txt";
 
     public static void main(String[] args) {
-        try{
+        try {
             Path path = Paths.get(FILE_PATH);
             Stream<String> lines = Files.lines(path);
             List<String> replaced = lines
-                    .map(line -> line.replaceAll(REPLACE_ALL,REPLACE_WITH))
+                    .map(
+                            line -> line
+                                    .replaceAll("&nbsp;", "")
+                                    .replaceAll("<br>", "")
+                                    .replaceAll("&gt;", ">")
+                                    .replaceAll("&lt;", "<")
+                    )
                     .collect(Collectors.toList());
-            Files.write(path,replaced);
+            Files.write(path, replaced);
             lines.close();
             System.out.println("Success!");
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 }
-
-
-

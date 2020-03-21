@@ -1,0 +1,28 @@
+SOLID PRINCIPLE'S
+
+SINGLE RESPONSEBILITY
+-class, method, package should have only one responsibility
+
+OPEN CLOSE
+-open for extension, but closed for modification
+
+LISCOV SUPSTITUTTION 
+-parent should be able to do everything what child is able to do
+
+"Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program."
+
+INTERFACE SEGREGATION 
+- a ,lot of smaller interfaces is better than one big one
+
+DEPENDENCY INVERSIOD
+---------       -------------        ------------
+|  Main |------>| Interface |<-------|  Service |
+---------       -------------        ------------
+-always depend on abstraction newer on concrete class. You will never care about concrete implementation because you always using interface.
+
+METHODS LEANGHT:
+-three lines
+
+VARIABLES NAMES:
+-small scope of view, insignificant simple
+-wide scope of view, name is it purpose with explanation
